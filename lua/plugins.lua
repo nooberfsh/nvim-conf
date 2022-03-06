@@ -1,7 +1,7 @@
 -- https://github.com/wbthomason/packer.nvim
 
 return require('packer').startup {
-    function()
+    function(use)
         -- 包管理器
         use 'wbthomason/packer.nvim'
 
@@ -38,8 +38,37 @@ return require('packer').startup {
             end
         }
 
+        --------------------------------------------------------lsp
 
-        --------------------------------------主题和颜色--------------------------------------------
+        use {
+            'neovim/nvim-lspconfig',
+            config = function()
+                require('plugins.nvim-lspconfig')
+            end
+        }
+
+        use {
+            'williamboman/nvim-lsp-installer',
+            config = function()
+                require('plugins.nvim-lsp-installer')
+            end
+        }
+
+        use {
+            'tami5/lspsaga.nvim',
+            config = function()
+                require('plugins.lspsaga')
+            end
+        }
+
+        use {
+            'j-hui/fidget.nvim',
+            config = function()
+                require('plugins.fidget')
+            end
+        }
+
+        --------------------------------------------------------主题和颜色
 
         use {
             'navarasu/onedark.nvim',
@@ -50,7 +79,7 @@ return require('packer').startup {
 
         use {
             'nvim-lualine/lualine.nvim',
-            requires = { 
+            requires = {
                 'kyazdani42/nvim-web-devicons',
                 'navarasu/onedark.nvim',
             },
