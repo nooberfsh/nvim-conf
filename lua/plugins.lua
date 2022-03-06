@@ -13,7 +13,15 @@ return require('packer').startup {
             },
             config = function()
                 require("plugins.nvim-tree")
-            end
+            end,
+        }
+
+        -- 自动添加括号
+        use {
+            'windwp/nvim-autopairs',
+            config = function()
+                require('plugins.nvim-autopairs')
+            end,
         }
 
         -- 文本替换
@@ -24,7 +32,7 @@ return require('packer').startup {
             },
             config = function()
                 require('plugins.spectre')
-            end
+            end,
         }
 
         -- 搜索/预览工具,包括:文件,字符串,mark,任何你能想到的东西
@@ -35,7 +43,7 @@ return require('packer').startup {
             },
             config = function()
                 require('plugins.telescope')
-            end
+            end,
         }
 
         --------------------------------------------------------lsp
@@ -44,21 +52,21 @@ return require('packer').startup {
             'neovim/nvim-lspconfig',
             config = function()
                 require('plugins.nvim-lspconfig')
-            end
+            end,
         }
 
         use {
             'williamboman/nvim-lsp-installer',
             config = function()
                 require('plugins.nvim-lsp-installer')
-            end
+            end,
         }
 
         use {
             'tami5/lspsaga.nvim',
             config = function()
                 require('plugins.lspsaga')
-            end
+            end,
         }
 
         --------------------------------------------------------主题和颜色
@@ -67,7 +75,7 @@ return require('packer').startup {
             'navarasu/onedark.nvim',
             config = function()
                 require('plugins.onedark')
-            end
+            end,
         }
 
         use {
@@ -78,7 +86,7 @@ return require('packer').startup {
             },
             config = function()
                 require('plugins.lualine')
-            end
+            end,
         }
 
         use {
@@ -96,5 +104,5 @@ return require('packer').startup {
 
             end
         }
-    }
+    },
 }
