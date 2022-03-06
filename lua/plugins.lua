@@ -1,6 +1,13 @@
 -- https://github.com/wbthomason/packer.nvim
 
-return require('packer').startup {
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
+require('packer').startup {
     function(use)
         -- 包管理器
         use 'wbthomason/packer.nvim'
@@ -43,6 +50,13 @@ return require('packer').startup {
             },
             config = function()
                 require('plugins.telescope')
+            end,
+        }
+
+        use {
+            "akinsho/toggleterm.nvim",
+            config = function()
+                require('plugins.toggleterm')
             end,
         }
 
@@ -101,8 +115,8 @@ return require('packer').startup {
         display = {
             open_fn = function()
                 return require('packer.util').float({ border = 'single' })
-
             end
         }
     },
 }
+

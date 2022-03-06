@@ -20,3 +20,6 @@ vim.o.filetype = "plugin"
 
 -- 是否特殊显示空格等字符
 vim.o.list = true
+
+-- 是否允许缓冲区未保存时就切换
+vim.o.hidden = true
