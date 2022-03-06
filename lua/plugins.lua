@@ -61,13 +61,6 @@ return require('packer').startup {
             end
         }
 
-        use {
-            'j-hui/fidget.nvim',
-            config = function()
-                require('plugins.fidget')
-            end
-        }
-
         --------------------------------------------------------主题和颜色
 
         use {
@@ -86,6 +79,13 @@ return require('packer').startup {
             config = function()
                 require('plugins.lualine')
             end
+        }
+
+        use {
+            'j-hui/fidget.nvim',
+            config = function()
+                require('plugins.fidget')
+            end,
         }
     end,
 
