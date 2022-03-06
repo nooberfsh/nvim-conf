@@ -37,6 +37,27 @@ return require('packer').startup {
                 require('plugins.telescope')
             end
         }
+
+
+        --------------------------------------主题和颜色--------------------------------------------
+
+        use {
+            'navarasu/onedark.nvim',
+            config = function()
+                require('plugins.onedark')
+            end
+        }
+
+        use {
+            'nvim-lualine/lualine.nvim',
+            requires = { 
+                'kyazdani42/nvim-web-devicons',
+                'navarasu/onedark.nvim',
+            },
+            config = function()
+                require('plugins.lualine')
+            end
+        }
     end,
 
     config = {
