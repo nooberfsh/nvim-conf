@@ -9,7 +9,8 @@ local lsp_installer_servers = require('nvim-lsp-installer.servers')
 local servers = {
     -- 语言服务器名称：配置选项
     sumneko_lua = require('lsp.sumneko_lua'),
-    rust_analyzer = require('lsp.rust_analyzer')
+    rust_analyzer = require('lsp.rust_analyzer'),
+    hls = require('lsp.haskell_hls'),
 }
 
 -- 这里是 LSP 服务启动后的按键加载
