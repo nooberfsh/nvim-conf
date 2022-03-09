@@ -53,10 +53,19 @@ require('packer').startup {
             end,
         }
 
+        -- 终端工具
         use {
             "akinsho/toggleterm.nvim",
             config = function()
                 require('plugins.toggleterm')
+            end,
+        }
+
+        --------------------------------------------------------开发相关
+        use {
+            'numToStr/Comment.nvim',
+            config = function()
+                require('plugins.comment')
             end,
         }
 
