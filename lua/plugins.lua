@@ -69,6 +69,15 @@ require('packer').startup {
             end,
         }
 
+        --------------------------------------------------------git
+        use {
+            'sindrets/diffview.nvim',
+            requires = 'nvim-lua/plenary.nvim',
+            config = function()
+                require('plugins.diffview')
+            end,
+        }
+
         --------------------------------------------------------lsp
 
         use {
