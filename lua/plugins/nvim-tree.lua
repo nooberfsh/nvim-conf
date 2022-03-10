@@ -4,6 +4,13 @@ require'nvim-tree'.setup {
     update_focused_file = {
         enable      = true,
     },
+    actions = {
+        open_file = {
+            window_picker = {
+                enable = false,
+            },
+        },
+    },
 }
 
 -- 目录后面添加斜杠 '/'
