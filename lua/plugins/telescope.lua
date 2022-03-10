@@ -1,6 +1,19 @@
-require('telescope').setup {
+-- https://github.com/nvim-telescope/telescope.nvim
+--
+-- extenstions:
+-- https://github.com/nvim-telescope/telescope-ui-select.nvim
 
+require('telescope').setup {
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+                -- even more opts
+            }
+        }
+    }
 }
+
+require("telescope").load_extension("ui-select")
 
 -- 查找文件
 vim.keybinds.gmap("n", "<leader>ff", "<cmd>Telescope find_files theme=dropdown<CR>", vim.keybinds.opts)

@@ -63,8 +63,17 @@ for server_name, server_options in pairs(servers) do
                 server_options.flags = {
                     debounce_text_changes = 150
                 }
-                -- 启动服务
-                server:setup(server_options)
+                -- https://github.com/williamboman/nvim-lsp-installer/wiki/Rust
+                if server_name == 'rust_analyzer' then
+                    local rust_config = require('plugins.rust-tools')
+                    require("rust-tools").setup {
+                        tools = rust_config.tools,
+                        server = vim.tbl_deep_extend("force", server:get_default_options(), server_options),
+                    }
+                else
+                    -- 启动服务
+                    server:setup(server_options)
+                end
             end
         )
         -- 如果服务器没有下载，则通过 notify 插件弹出下载提示

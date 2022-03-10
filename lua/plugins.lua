@@ -47,6 +47,7 @@ require('packer').startup {
             'nvim-telescope/telescope.nvim',
             requires = {
                 'nvim-lua/plenary.nvim',
+                'nvim-telescope/telescope-ui-select.nvim',
             },
             config = function()
                 require('plugins.telescope')
@@ -92,6 +93,15 @@ require('packer').startup {
             config = function()
                 require('plugins.nvim-lsp-installer')
             end,
+        }
+
+        use {
+            'simrat39/rust-tools.nvim',
+            requires = {
+                'nvim-lua/plenary.nvim',
+                'neovim/nvim-lspconfig',
+                'mfussenegger/nvim-dap',
+            },
         }
 
         use {
