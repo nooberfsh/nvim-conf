@@ -32,3 +32,6 @@ vim.keybinds.gmap('t', '<C-h>', '<C-\\><C-N><C-w>h', vim.keybinds.opts)
 vim.keybinds.gmap('t', '<C-j>', '<C-\\><C-N><C-w>j', vim.keybinds.opts)
 vim.keybinds.gmap('t', '<C-k>', '<C-\\><C-N><C-w>k', vim.keybinds.opts)
 vim.keybinds.gmap('t', '<C-l>', '<C-\\><C-N><C-w>l', vim.keybinds.opts)
+
+-- 正常模式下按 ESC 取消高亮显示
+vim.keybinds.gmap("n", "<ESC>", ":nohlsearch<CR>", vim.keybinds.opts)

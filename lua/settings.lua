@@ -23,3 +23,7 @@ vim.o.list = true
 
 -- 是否允许缓冲区未保存时就切换
 vim.o.hidden = true
+
+-- 向左向下生成窗口
+vim.o.splitright = true
+vim.o.splitbelow = true
