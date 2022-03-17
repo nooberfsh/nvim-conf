@@ -111,6 +111,23 @@ require('packer').startup {
             end,
         }
 
+        -- 补全
+        use {
+            "hrsh7th/nvim-cmp",  -- 代码补全核心插件，下面都是增强补全的体验插件
+            requires = {
+                {"onsails/lspkind-nvim"}, -- 为补全添加类似 vscode 的图标
+                {"hrsh7th/vim-vsnip"}, -- vsnip 引擎，用于获得代码片段支持
+                {"hrsh7th/cmp-vsnip"}, -- 适用于 vsnip 的代码片段源
+                {"hrsh7th/cmp-nvim-lsp"}, -- 替换内置 omnifunc，获得更多补全
+                {"hrsh7th/cmp-path"}, -- 路径补全
+                {"hrsh7th/cmp-buffer"}, -- 缓冲区补全
+                {"hrsh7th/cmp-cmdline"}, -- 命令补全
+            },
+            config = function()
+                require("plugins.nvim-cmp")
+            end,
+        }
+
         --------------------------------------------------------主题和颜色
 
         use {

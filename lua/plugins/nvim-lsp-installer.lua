@@ -57,8 +57,15 @@ for server_name, server_options in pairs(servers) do
         -- 判断服务是否准备就绪，若就绪则启动服务
         server:on_ready(
             function()
+                -- 使用 cmp_nvim_lsp 代替内置 omnifunc，获得更强的补全体验
+                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+                -- 代替内置 omnifunc
+                server_options.capabilities = capabilities
+
                 -- keybind
                 server_options.on_attach = attach
+
                 -- options config
                 server_options.flags = {
                     debounce_text_changes = 150
