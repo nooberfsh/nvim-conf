@@ -6,6 +6,7 @@ require'nvim-tree'.setup {
     },
     actions = {
         open_file = {
+            resize_window = true,
             window_picker = {
                 enable = false,
             },
@@ -19,3 +20,12 @@ vim.g.nvim_tree_add_trailing = 1
 vim.keybinds.gmap("n", "<A-r>", "<cmd>NvimTreeToggle<CR>", vim.keybinds.opts)
 vim.keybinds.gmap("i", "<A-r>", "<cmd>NvimTreeToggle<CR>", vim.keybinds.opts)
 vim.keybinds.gmap("t", "<A-r>", "<cmd>NvimTreeToggle<CR>", vim.keybinds.opts)
+
+-- 变大
+vim.keybinds.gmap("n", "<A-e>", "<cmd>NvimTreeResize +4<CR>", vim.keybinds.opts)
+vim.keybinds.gmap("i", "<A-e>", "<cmd>NvimTreeResize +4<CR>", vim.keybinds.opts)
+vim.keybinds.gmap("t", "<A-e>", "<cmd>NvimTreeResize +4<CR>", vim.keybinds.opts)
+-- 变小
+vim.keybinds.gmap("n", "<A-E>", "<cmd>NvimTreeResize -4<CR>", vim.keybinds.opts)
+vim.keybinds.gmap("i", "<A-E>", "<cmd>NvimTreeResize -4<CR>", vim.keybinds.opts)
+vim.keybinds.gmap("t", "<A-E>", "<cmd>NvimTreeResize -4<CR>", vim.keybinds.opts)
