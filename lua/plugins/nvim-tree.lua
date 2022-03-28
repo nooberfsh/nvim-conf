@@ -4,6 +4,11 @@ require'nvim-tree'.setup {
     update_focused_file = {
         enable      = true,
     },
+
+    git = {
+        enable = false,
+    },
+
     actions = {
         open_file = {
             resize_window = true,
