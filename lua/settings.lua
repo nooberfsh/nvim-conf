@@ -27,3 +27,14 @@ vim.o.hidden = true
 -- 向左向下生成窗口
 vim.o.splitright = true
 vim.o.splitbelow = true
+
+
+-- 自动切换输入法（Fcitx5 框架）
+vim.g.FcitxClose = function()
+    -- display fcitx state, 0 for close, 1 for inactive, 2 for active
+    local input_status = tonumber(vim.fn.system("fcitx5-remote"))
+    if input_status == 2 then
+        vim.fn.system("fcitx5-remote -c")
+    end
+end
+vim.cmd("autocmd InsertLeave * call FcitxClose()")
