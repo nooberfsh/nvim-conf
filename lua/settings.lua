@@ -10,9 +10,6 @@ vim.o.termguicolors = true
 -- 是否显示绝对行号
 vim.o.number = true
 
--- 是否显示绝对行号
-vim.o.number = true
-
 -- 是否开启自动缩进
 vim.o.autoindent = true
 -- 设定自动缩进的策略为 plugin
@@ -28,6 +25,8 @@ vim.o.hidden = true
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+-- 设定光标上下两侧最少保留的屏幕行数
+vim.o.scrolloff = 10
 
 -- 自动切换输入法（Fcitx5 框架）
 vim.g.FcitxClose = function()
