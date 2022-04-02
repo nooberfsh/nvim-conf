@@ -19,6 +19,7 @@ local function attach(_, bufnr)
     vim.keybinds.bmap(bufnr, "n", "<leader>gr", "<cmd>Telescope lsp_references<CR>", vim.keybinds.opts)
     vim.keybinds.bmap(bufnr, "n", "<leader>go", "<cmd>Telescope diagnostics<CR>", vim.keybinds.opts)
     vim.keybinds.bmap(bufnr, "n", "<leader>gi", "<cmd>Telescope lsp_implementations<CR>", vim.keybinds.opts)
+    vim.keybinds.bmap(bufnr, "n", "<leader>gs", "<cmd>Telescope lsp_document_symbols<CR>", vim.keybinds.opts)
     vim.keybinds.bmap(bufnr, "n", "<leader>ca", "<cmd>Telescope lsp_code_actions theme=dropdown<CR>", vim.keybinds.opts)
 
     -- 变量重命名（代替内置 LSP 的窗口，Lspsaga 让变量重命名更美观）
