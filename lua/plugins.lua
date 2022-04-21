@@ -31,6 +31,14 @@ require('packer').startup {
             end,
         }
 
+        -- 自动保存
+        use {
+            'Pocco81/AutoSave.nvim',
+            config = function()
+                require('plugins.auto-save')
+            end,
+        }
+
         -- 文本替换
         use {
             'windwp/nvim-spectre',
@@ -57,6 +65,7 @@ require('packer').startup {
         -- 终端工具
         use {
             "akinsho/toggleterm.nvim",
+            branch = 'main',
             config = function()
                 require('plugins.toggleterm')
             end,
@@ -65,6 +74,7 @@ require('packer').startup {
         --------------------------------------------------------开发相关
         use {
             'numToStr/Comment.nvim',
+            tag = 'v0.6',
             config = function()
                 require('plugins.comment')
             end,
