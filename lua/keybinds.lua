@@ -35,3 +35,11 @@ vim.keybinds.gmap('t', '<C-l>', '<C-\\><C-N><C-w>l', vim.keybinds.opts)
 
 -- 正常模式下按 ESC 取消高亮显示
 vim.keybinds.gmap("n", "<ESC>", ":nohlsearch<CR>", vim.keybinds.opts)
+
+-- 复制内容 -> 系统剪贴板
+vim.keybinds.gmap("v", "<C-c>", '"+y', vim.keybinds.opts)
+-- 剪切内容 -> 系统剪贴板
+vim.keybinds.gmap("v", "<C-x>", '"+c', vim.keybinds.opts)
+-- 拷贝内容 <- 系统剪贴板
+vim.keybinds.gmap("v", "<C-v>", 'c<ESC>"+p', vim.keybinds.opts)
+vim.keybinds.gmap("i", "<C-v>", '<ESC>"+p', vim.keybinds.opts)
