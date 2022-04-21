@@ -2,8 +2,15 @@
 --
 -- extenstions:
 -- https://github.com/nvim-telescope/telescope-ui-select.nvim
+--
 
 require('telescope').setup {
+    defaults = {
+        sorting_strategy = 'ascending',
+        layout_config = {
+            prompt_position = 'top',
+        },
+    },
     extensions = {
         ["ui-select"] = {
             require("telescope.themes").get_dropdown {
@@ -16,7 +23,7 @@ require('telescope').setup {
 require("telescope").load_extension("ui-select")
 
 -- 查找文件
-vim.keybinds.gmap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", vim.keybinds.opts)
+vim.keybinds.gmap("n", "<leader>ff", "<cmd>Telescope find_files <CR>", vim.keybinds.opts)
 -- 查找文字
 vim.keybinds.gmap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", vim.keybinds.opts)
 -- 查找特殊符号
