@@ -11,6 +11,7 @@ local servers = {
     sumneko_lua = require('lsp.sumneko_lua'),
     rust_analyzer = require('lsp.rust_analyzer'),
     hls = require('lsp.haskell_hls'),
+    svls = require('lsp.system_verilog_svls'),
 }
 
 -- 这里是 LSP 服务启动后的按键加载
